@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -10,10 +9,11 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
+const apiKey = 'e1528be14cef674cf03d76f6bc2812b1'; // Replace with your OpenWeatherMap API key
+
 app.get('/api/weather', async (req, res) => {
   const { city } = req.query;
   try {
-    const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // Replace with your OpenWeatherMap API key
     const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`);
     res.json(response.data);
   } catch (error) {

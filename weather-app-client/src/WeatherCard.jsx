@@ -3,7 +3,7 @@ import React from 'react';
 import './WeatherCard.css';
 
 const WeatherCard = ({ weather }) => {
-  const { name, main, weather: weatherDetails, wind } = weather;
+  const { name, main, weather: weatherDetails, wind, sys } = weather;
 
   const weatherIcon = weatherDetails[0].icon;
   const weatherDescription = weatherDetails[0].description;
@@ -15,7 +15,7 @@ const WeatherCard = ({ weather }) => {
   return (
     <div className="weather-card">
       <div className="weather-card-header">
-        <h2>{name}</h2>
+        <h2>{name}, {sys.country}</h2>
       </div>
       <div className="weather-card-body">
         <div className="weather-icon">
