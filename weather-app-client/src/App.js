@@ -7,15 +7,22 @@ import './App.css';
 function App() {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState(null);
+  const [error, setError] = useState('');
 
   const handleSearch = async () => {
+    if (!city) {
+      setError('Please enter a city name');
+      return;
+    }
     try {
       const response = await axios.get(`http://localhost:3001/api/weather`, {
         params: { city }
       });
       setWeather(response.data);
+      setError('');
     } catch (error) {
       console.error('Error fetching weather data:', error);
+      setError('Error fetching weather data');
     }
   };
 
@@ -32,6 +39,7 @@ function App() {
           />
           <button onClick={handleSearch}>Search</button>
         </div>
+        {error && <div className="error">{error}</div>}
       </header>
       {weather && <WeatherCard weather={weather} />}
     </div>
