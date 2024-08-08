@@ -14,9 +14,11 @@ function App() {
       return;
     }
     try {
+      console.log(`Searching weather for city: ${city}`);
       const response = await axios.get(`http://localhost:3001/api/weather`, {
         params: { city }
       });
+      console.log('Weather data:', response.data);
       setWeather(response.data);
       setError('');
     } catch (error) {
