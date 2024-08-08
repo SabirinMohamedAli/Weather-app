@@ -1,3 +1,4 @@
+/* src/WeatherCard.css */
 .weather-card {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
@@ -6,7 +7,9 @@
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
   }
   
   .weather-card-header {
@@ -18,6 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
   }
   
   .weather-icon {
@@ -40,5 +44,10 @@
   .weather-card-footer .details {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .weather-card-footer .details div {
+    margin: 5px 0;
   }
   
