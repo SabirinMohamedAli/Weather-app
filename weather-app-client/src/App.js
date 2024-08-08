@@ -36,7 +36,7 @@ function App() {
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            placeholder="Enter city name"
+            placeholder="Enter city name please"
           />
           <button onClick={handleSearch}>Search</button>
         </div>
