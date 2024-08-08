@@ -1,4 +1,3 @@
-// src/WeatherCard.js
 import React from 'react';
 import './WeatherCard.css';
 
