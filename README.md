@@ -22,7 +22,7 @@ The Weather App is a simple web application that allows users to search for the 
 
     ```bash
     git clone https://github.com/SabirinMohamedAli/Weather-app.git
-    cd weather-app
+    cd weather-app-client
     ```
 
 2. **Backend Setup:**
